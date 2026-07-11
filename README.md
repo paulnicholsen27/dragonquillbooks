@@ -96,7 +96,7 @@ _Not required for light-medium kit usage, but helpful if you want to customise t
 
 1.  At the top of this repository page, click the **Use This Template** button to create a new repository.
 2.  Follow the instructions to create a new repository from the starter kit.
-3.  Clone the repository locally to your computer and open it in VS Code.
+3.  Clone the repository  ly to your computer and open it in VS Code.
 4.  Run `npm install` to install all dependencies.
 5.  After the installation is complete, run `npm start` to start the development server.
 6.  Fill out the `./src/_data/client.js` file with the appropriate information for your client.
