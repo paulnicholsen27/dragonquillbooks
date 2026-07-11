@@ -22,21 +22,11 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
         <link rel="stylesheet" href="/assets/css/local.css"/>
     {% endif %}
 
-    <!-- To ensure proper validation, prevent errors, and encourage developers to check, schema's are an opt-in feature. They're very bespoke and requires some customising  -->
+    <!-- To ensure proper validation, prevent errors, and encourage developers to check, schea's are an opt-in feature. They're very bespoke and require some customising  -->
     <!-- Uncomment the code below to enable Structured Data, and test it when you deploy to Netlify - https://developers.google.com/search/docs/appearance/structured-data -->
     <!-- {% include "components/home-schema.html" %} -->
 {% endblock %}
 
 {% block body %}
-    <section id="welcome">
-        <div class="cs-container">
-            <div class="cs-content">
-                <p>
-                    Get started by reading the
-                    Quick Start Guide
-                    section in the README.
-                </p>
-            </div>
-        </div>
-    </section>
+    {% include "components/hero.html" %}
 {% endblock %}
