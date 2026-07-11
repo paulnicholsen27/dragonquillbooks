@@ -1,0 +1,31 @@
+<!-- ============================================ -->
+<!--                    Hero                      -->
+<!-- ============================================ -->
+
+<section id="hero-330">
+    <div class="cs-container">
+        <div class="cs-flex-group">
+            <h1 class="cs-title"><span class="cs-accent">Professional</span> Cleaning Service for Your Home And Other Area</h1>
+            <p class="cs-text">
+                We are committed to the best quality in the field of industrial cleaning, home and garden cleaning.
+            </p>
+            <div class="cs-button-group">
+                <a href="" class="cs-button-solid">Get Started</a>
+                <a href="" class="cs-button-transparent">
+                    <picture class="cs-picture">
+                        <img class="cs-img" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/chevron-right.svg" alt="icon" width="12" height="12" aria-hidden="true">
+                    </picture>
+                    See Prices
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Background Image -->
+	<picture class="cs-background">
+		<source srcset="{% getUrl '/assets/images/pen-and-pad.jpg' | resize({ height: 1160, width: 1200 }) | avif %}" media="(max-width: 1200px)" type="image/avif">
+		<source srcset="{% getUrl '/assets/images/pen-and-pad.jpg' | resize({ height: 1160, width: 600 }) | webp %}" media="(max-width: 600px)" type="image/webp">
+		<source srcset="{% getUrl '/assets/images/pen-and-pad.jpg' | resize({ height: 1664, width: 7140 }) | jpeg %}" media="(min-width: 601px)" type="image/jpeg">
+		<img src="{% getUrl '/assets/images/pen-and-pad.jpg' | resize({ height: 1160, width: 1200 }) | jpeg %}" alt="Background image of a fountain pen lying on a reporter's notebook">
+	</picture>
+</section>
