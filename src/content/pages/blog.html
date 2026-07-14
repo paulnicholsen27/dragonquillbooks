@@ -1,13 +1,20 @@
 ---
-title: "Blog | Code Stitch Web Designs"
-description: "Meta description for the page"
-permalink: "/blog/"
+title: "Blog | Santo Psychotherapy"
+description: "Read the Santo Psychotherapy blog for insights on mental health, trauma recovery, relationships, and LGBTQIA+ affirming care."
+pagination:
+    data: collections.post
+    size: 6
+    alias: posts
+    reverse: true
+permalink: "{% if pagination.pageNumber == 0 %}/blog/{% else %}/blog/{{ pagination.pageNumber + 1 }}/{% endif %}"
+eleventyComputed:
+    title: "{% if pagination.pageNumber > 0 %}Blog - Page {{ pagination.pageNumber + 1 }} | Santo Psychotherapy{% else %}Blog | Santo Psychotherapy{% endif %}"
 ---
 
 {% extends "layouts/base.html" %}
 
 {% block head %}
-    <link rel="preload" as="image" href="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 640, height: 600 }) | avif %}" />
+
     <link rel="stylesheet" href="/assets/css/blog.css">
 {% endblock %}
 
@@ -16,31 +23,7 @@ permalink: "/blog/"
     <!--                   Banner                     -->
     <!-- ============================================ -->
 
-    <div id="banner-310">
-        <div class="cs-container">
-            <span class="cs-int-title">Blog</span>
-            <div class="cs-breadcrumbs">
-                <a href="/" class="cs-link">Home</a>
-                <a href="/blog/" class="cs-link cs-active">Blog</a>
-            </div>
-        </div>
-        <!--Background Image-->
-        <picture class="cs-background">
-            <!--Mobile Image-->
-            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 640, height: 600 }) | avif %}" type="image/avif">
-            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 640, height: 600 }) | webp %}" type="image/webp">
-            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 640, height: 600 }) | jpeg %}" type="image/jpeg">
-            <!--Tablet Image-->
-            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2048, height: 942 }) | avif %}" type="image/avif">
-            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2048, height: 942 }) | webp %}" type="image/webp">
-            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2048, height: 942 }) | jpeg %}" type="image/jpeg">
-            <!--Desktop Image-->
-            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2500, height: 628 }) | avif %}" type="image/avif">
-            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2500, height: 628 }) | webp %}" type="image/webp">
-            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2500, height: 628 }) | jpeg %}" type="image/jpeg">
-            <img src="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2500, height: 628 }) | jpeg %}" alt="library" width="1920" height="482" loading="eager" decoding="async">
-        </picture>
-    </div>
+    {{ macros.banner("Our Thoughts") }}
 
     <!-- ============================================ -->
     <!--                 Blog Listings                -->
@@ -48,40 +31,42 @@ permalink: "/blog/"
 
     <div id="blog-listing">
         <div class="cs-container">
-            {% if collections.post | length == 0 %}
+            {% if posts | length == 0 %}
                 <h1 class="cs-title">
                     No Recent Posts
                 </h1>
             {% else %}
-                {%- for post in collections.post | reverse -%}
+                {%- for post in posts -%}
                     <article class="cs-article">
                         <picture class="cs-article-image">
                             <!--Mobile Image-->
-                            <source media="(max-width: 600px)" srcset="{% getUrl post.data.image | resize({ width: 576, height: 400 }) | avif %}" type="image/avif">
-                            <source media="(max-width: 600px)" srcset="{% getUrl post.data.image | resize({ width: 576, height: 400 }) | webp %}" type="image/webp">
-                            <source media="(max-width: 600px)" srcset="{% getUrl post.data.image | resize({ width: 576, height: 400 }) | jpeg %}" type="image/jpeg">
+                            <source media="(max-width: 600px)" srcset="{% getUrl post.data.image | resize({ width: 576 }) | avif %}" type="image/avif">
+                            <source media="(max-width: 600px)" srcset="{% getUrl post.data.image | resize({ width: 576 }) | webp %}" type="image/webp">
+                            <source media="(max-width: 600px)" srcset="{% getUrl post.data.image | resize({ width: 576 }) | jpeg %}" type="image/jpeg">
                             <!--Tablet Image-->
-                            <source media="(max-width: 1024px)" srcset="{% getUrl post.data.image | resize({ width: 1142, height: 614 }) | avif %}" type="image/avif">
-                            <source media="(max-width: 1024px)" srcset="{% getUrl post.data.image | resize({ width: 1142, height: 614 }) | webp %}" type="image/webp">
-                            <source media="(max-width: 1024px)" srcset="{% getUrl post.data.image | resize({ width: 1142, height: 614 }) | jpeg %}" type="image/jpeg">
+                            <source media="(max-width: 1024px)" srcset="{% getUrl post.data.image | resize({ width: 1142 }) | avif %}" type="image/avif">
+                            <source media="(max-width: 1024px)" srcset="{% getUrl post.data.image | resize({ width: 1142 }) | webp %}" type="image/webp">
+                            <source media="(max-width: 1024px)" srcset="{% getUrl post.data.image | resize({ width: 1142 }) | jpeg %}" type="image/jpeg">
                             <!--Desktop Image-->
-                            <source media="(min-width: 1024px)" srcset="{% getUrl post.data.image | resize({ width: 1648, height: 800 }) | avif %}" type="image/avif">
-                            <source media="(min-width: 1024px)" srcset="{% getUrl post.data.image | resize({ width: 1648, height: 800 }) | webp %}" type="image/webp">
-                            <source media="(min-width: 1024px)" srcset="{% getUrl post.data.image | resize({ width: 1648, height: 800 }) | jpeg %}" type="image/jpeg">
-                            <img src="{% getUrl post.data.image | resize({ width: 1648, height: 800 }) | jpeg %}" alt="{{ post.data.alt }}" width="824" height="400" decoding="async">
+                            <source media="(min-width: 1024px)" srcset="{% getUrl post.data.image | resize({ width: 1648 }) | avif %}" type="image/avif">
+                            <source media="(min-width: 1024px)" srcset="{% getUrl post.data.image | resize({ width: 1648 }) | webp %}" type="image/webp">
+                            <source media="(min-width: 1024px)" srcset="{% getUrl post.data.image | resize({ width: 1648 }) | jpeg %}" type="image/jpeg">
+                            <img src="{% getUrl post.data.image | resize({ width: 1648 }) | jpeg %}" alt="{{ post.data.alt }}" width="1648" decoding="async">
                         </picture>
                         <div class="cs-article-group">
                             <div class="cs-author-group">
                                 <picture class="cs-author-img">
-                                    <img src="/assets/svgs/profile.svg" alt="Profile icon" width="32" height="32" decoding="async" loading="lazy" aria-hidden="true" />
+                                    {% if post.data.authorAvatar %}
+                                        <img src="{{ post.data.authorAvatar }}" alt="{{ post.data.author }}" width="32" height="32" decoding="async" loading="lazy" />
+                                    {% else %}
+                                        <img src="/assets/images/logos/logo_bulb_square.png" alt="Profile icon" width="32" height="32" decoding="async" loading="lazy" aria-hidden="true" />
+                                    {% endif %}
                                 </picture>
                                 <span class="cs-author-name">{{ post.data.author }}</span>
                                 <span aria-hidden="true" class="cs-dot"></span>
                                 <span class="cs-date">{{ post.date | postDate }}</span>
                             </div>
-                            <h2 class="cs-article-title">
-                                {{ post.data.title }}
-                            </h2>
+                            <a class="cs-article-title" href="{{ post.url }}">{{ post.data.title }}</a>
                             <p class="cs-article-desc">
                                 {{ post.data.description }}
                             </p>
@@ -89,6 +74,34 @@ permalink: "/blog/"
                         </div>
                     </article>
                 {%- endfor -%}
+
+                {% if pagination.pages | length > 1 %}
+                    <nav class="cs-pagination" aria-label="Blog pages">
+                        {% if pagination.href.previous %}
+                            <a class="cs-page-link cs-page-link-prev" href="{{ pagination.href.previous }}">Previous</a>
+                        {% else %}
+                            <span class="cs-page-link cs-page-link-prev cs-page-link-disabled" aria-disabled="true">Previous</span>
+                        {% endif %}
+
+                        <div class="cs-page-list" aria-label="Page numbers">
+                            {% for pageEntry in pagination.pages %}
+                                {% set pageNumber = loop.index %}
+                                {% set pageHref = pagination.hrefs[loop.index0] %}
+                                {% if pagination.pageNumber == loop.index0 %}
+                                    <span class="cs-page-number cs-page-number-active" aria-current="page">{{ pageNumber }}</span>
+                                {% else %}
+                                    <a class="cs-page-number" href="{{ pageHref }}">{{ pageNumber }}</a>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+
+                        {% if pagination.href.next %}
+                            <a class="cs-page-link cs-page-link-next" href="{{ pagination.href.next }}">Next</a>
+                        {% else %}
+                            <span class="cs-page-link cs-page-link-next cs-page-link-disabled" aria-disabled="true">Next</span>
+                        {% endif %}
+                    </nav>
+                {% endif %}
             {% endif %}
         </div>
 
