@@ -1,6 +1,6 @@
 ---
-title: "Blog | Santo Psychotherapy"
-description: "Read the Santo Psychotherapy blog for insights on mental health, trauma recovery, relationships, and LGBTQIA+ affirming care."
+title: "Blog | Dragon Quill Books"
+description: "Read the Dragon Quill Books blog for updates on new books, children's literature, and creative writing."
 pagination:
     data: collections.post
     size: 6
@@ -8,7 +8,7 @@ pagination:
     reverse: true
 permalink: "{% if pagination.pageNumber == 0 %}/blog/{% else %}/blog/{{ pagination.pageNumber + 1 }}/{% endif %}"
 eleventyComputed:
-    title: "{% if pagination.pageNumber > 0 %}Blog - Page {{ pagination.pageNumber + 1 }} | Santo Psychotherapy{% else %}Blog | Santo Psychotherapy{% endif %}"
+    title: "{% if pagination.pageNumber > 0 %}Blog - Page {{ pagination.pageNumber + 1 }} | Dragon Quill Books{% else %}Blog | Dragon Quill Books{% endif %}"
 ---
 
 {% extends "layouts/base.html" %}
@@ -19,11 +19,6 @@ eleventyComputed:
 {% endblock %}
 
 {% block body %}
-    <!-- ============================================ -->
-    <!--                   Banner                     -->
-    <!-- ============================================ -->
-
-    {{ macros.banner("Our Thoughts") }}
 
     <!-- ============================================ -->
     <!--                 Blog Listings                -->
