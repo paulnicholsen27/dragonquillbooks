@@ -341,7 +341,7 @@
 		/* prevents padding and border from affecting height and width */
 		box-sizing: border-box;
 		padding: (12/16rem) (16/16rem);
-		background: rgba(26, 26, 26, 0.08);
+		background: var(--secondaryMedium);
 		position: fixed;
 		z-index: 10000;
 		transition: background-color 0.3s;
@@ -378,7 +378,7 @@
 		}
 
 		&.cs-active {
-			background-color: #1a1a1a;
+			background-color: var(--secondaryLight);
 
 			&:after {
 				height: 150vw;
@@ -426,7 +426,7 @@
 			width: (56/16rem);
 			height: (56/16rem);
 			margin: 0 0 0 auto;
-			background-color: var(--primary);
+			background-color: var(--secondary);
 			border: none;
 			display: flex;
 			justify-content: center;
