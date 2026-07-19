@@ -22,11 +22,33 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
         <link rel="stylesheet" href="/assets/css/local.css"/>
     {% endif %}
 
-    <!-- To ensure proper validation, prevent errors, and encourage developers to check, schea's are an opt-in feature. They're very bespoke and require some customising  -->
     <!-- Uncomment the code below to enable Structured Data, and test it when you deploy to Netlify - https://developers.google.com/search/docs/appearance/structured-data -->
     <!-- {% include "components/home-schema.html" %} -->
 {% endblock %}
 
 {% block body %}
-    {% include "components/hero.html" %}
+    <!-- ============================================ -->
+<!--                    Hero                      -->
+<!-- ============================================ -->
+
+<section id="hero-330">
+    <div class="cs-container">
+        <div class="cs-flex-group">
+            <h1 class="cs-title"><div class="large">Dragon Quill</div><div>Books</div></h1>
+            <p class="cs-text">
+                Where Every Story Sparks a Child's Imagination
+            </p>
+        </div>
+    </div>
+
+    <!-- Background Image -->
+	<picture class="cs-background">
+		<source srcset="{% getUrl '/assets/images/pen-and-pad.jpg' | resize({ height: 1160, width: 1200 }) | avif %}" media="(max-width: 1200px)" type="image/avif">
+		<source srcset="{% getUrl '/assets/images/pen-and-pad.jpg' | resize({ height: 1160, width: 600 }) | webp %}" media="(max-width: 600px)" type="image/webp">
+		<source srcset="{% getUrl '/assets/images/pen-and-pad.jpg' | resize({ height: 1664, width: 7140 }) | jpeg %}" media="(min-width: 601px)" type="image/jpeg">
+		<img src="{% getUrl '/assets/images/pen-and-pad.jpg' | resize({ height: 1160, width: 1200 }) | jpeg %}" alt="Background image of a fountain pen lying on a reporter's notebook">
+	</picture>
+</section>
+
+
 {% endblock %}
