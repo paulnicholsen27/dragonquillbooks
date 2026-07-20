@@ -25,7 +25,7 @@
             max-width: (522/16rem);
             /* moved section padding to the .cs-content so we can have the cs-picture be full width on mobile without the padding preventing it from doing so */
             padding: var(--sectionPadding);
-            padding-top: 0;
+            // padding-top: 0;
             /* prevents padding from affecting width and height */
             box-sizing: border-box;
             display: flex;
@@ -37,56 +37,16 @@
         .cs-topper,
         .cs-title {
             color: var(--bodyTextColorWhite);
+			margin-top: 20px;
         }
 
         .cs-text {
             margin-bottom: (16/16rem);
             color: var(--bodyTextColorWhite);
             opacity: 0.8;
+			padding-right: (32/16rem);
             &:last-of-type {
                 margin-bottom: (32/16rem);
-            }
-        }
-
-        .cs-button-solid {
-            font-size: (16/16rem);
-            /* 46px - 56px */
-            line-height: clamp(2.875rem, 5.5vw, 3.5rem);
-            text-decoration: none;
-            font-weight: 700;
-            text-align: center;
-            margin: 0;
-            color: #1a1a1a;
-            min-width: (150/16rem);
-            padding: 0 (24/16rem);
-            background-color: var(--bodyTextColorWhite);
-            border-radius: (4/16rem);
-            display: inline-block;
-            position: relative;
-            z-index: 1;
-            /* prevents padding from adding to the width */
-            box-sizing: border-box;
-            transition: color 0.3s;
-
-            &:before {
-                content: "";
-                position: absolute;
-                height: 100%;
-                width: 0%;
-                background: #000;
-                opacity: 1;
-                top: 0;
-                left: 0;
-                z-index: -1;
-                border-radius: (4/16rem);
-                transition: width 0.3s;
-            }
-
-            &:hover {
-                color: #fff;
-                &:before {
-                    width: 100%;
-                }
             }
         }
 
@@ -97,6 +57,7 @@
             aspect-ratio: 1;
 
             img {
+				border: 1px white solid;
                 position: absolute;
                 top: 0;
                 left: 50%;
@@ -112,12 +73,10 @@
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
     #sbs-574 {
-        /* we use margin here instead of padding because we want to create the space OUTSIDE the section.  The overflow on the section clips the boxes we made to make the slanted designs, so we need to push from the outside of the section with margin to create space between it and the next section.  If the section above this Stitch has a white background, add margin-top: 0. If it has a white section below it, add margin-bottom: 0. This will allow more proper spacing and not have too much empty space.  If both sections above and below this Stitch have white backgrounds, you can just remove this margin all together */
-        margin: var(--sectionPadding);
-        margin-left: 0;
-        margin-right: 0;
+		margin: 0 auto;
+		width: 100%;
         padding: var(--sectionPadding);
-        background-color: transparent;
+		background: linear-gradient(90deg,var(--primaryLight) 0%, var(--lightPurple) 50%, var(--primary) 100%);
         /* clips the red box from overflowing the section */
         overflow: hidden;
 
@@ -126,11 +85,12 @@
             position: relative;
             z-index: 1;
             &:before {
-                /* red box */
                 content: "";
-                width: 100vw;
-                margin-left: -38%;
-                background: var(--primary);
+                width: calc(100% + 2rem);
+                margin-left: -35%;
+				margin-top: 150px;
+				margin-bottom: 150px;
+                background: var(--darkPurple);
                 opacity: 1;
                 display: block;
                 position: absolute;
@@ -143,8 +103,6 @@
 
         .cs-content {
             width: 51%;
-            /* reset the padding, add the section padding back to the section container */
-            padding: 0;
         }
 
         .cs-picture {
@@ -156,19 +114,6 @@
             margin: clamp(1.5rem, 3vw, 2rem) 0 clamp(1.5rem, 3vw, 2rem)
                 clamp(1.5rem, 3vw, 2rem);
             position: relative;
-
-            &:before {
-                content: "";
-                width: 50%;
-                background: var(--secondary);
-                opacity: 1;
-                display: block;
-                position: absolute;
-                /*24px - 32px, wrapped in calc function to multiple by negative 1 and get a negative clamp value */
-                top: ~"calc(clamp(1.5rem, 3vw, 2rem)*-1)";
-                bottom: ~"calc(clamp(1.5rem, 3vw, 2rem)*-1)";
-                left: ~"calc(clamp(1.5rem, 3vw, 2rem)*-1)";
-            }
         }
     }
 }
