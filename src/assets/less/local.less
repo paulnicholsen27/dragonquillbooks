@@ -5,7 +5,7 @@
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
     #sbs-574 {
-        background-color: var(--primary);
+        background-color: var(--darkPurple);
 
         .cs-container {
             width: 100%;
@@ -14,17 +14,13 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            /* 48px - 64px */
-            gap: clamp(3rem, 7vw, 4rem);
         }
 
         .cs-content {
             /* set text align to left if content needs to be left aligned */
             text-align: left;
             width: 100%;
-            max-width: (522/16rem);
-            /* moved section padding to the .cs-content so we can have the cs-picture be full width on mobile without the padding preventing it from doing so */
-            padding: var(--sectionPadding);
+            max-width: (640/16rem);
             // padding-top: 0;
             /* prevents padding from affecting width and height */
             box-sizing: border-box;
@@ -32,6 +28,7 @@
             flex-direction: column;
             /* centers content horizontally, set to flex-start to left align */
             align-items: flex-start;
+			padding-bottom: (32/16rem);
         }
 
         .cs-topper,
@@ -68,7 +65,7 @@
                 object-fit: cover;
             }
         }
-
+	}
 }
 
 /* Tablet - 768px */
@@ -86,6 +83,7 @@
             position: relative;
             z-index: 1;
             &:before {
+				display: none important;
                 content: "";
                 width: calc(100% + 2rem);
                 margin-left: -35%;
@@ -104,6 +102,8 @@
 
         .cs-content {
             width: 51%;
+			padding: var(--sectionPadding);
+
         }
 
         .cs-picture {
@@ -118,4 +118,3 @@
         }
     }
 }
-
