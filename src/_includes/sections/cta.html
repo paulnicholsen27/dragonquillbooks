@@ -1,0 +1,33 @@
+<!-- ============================================ -->
+<!--                Call To Action                -->
+<!-- ============================================ -->
+<link rel="stylesheet" href="/assets/css/cta.css">
+
+<section id="cta-2443">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title">Join Us</h2>
+            <div class="cs-flex">
+                <p class="cs-text">
+                    Sign up for our newsletter and be the first to know about new books!
+                </p>
+                <a href="TODO" class="cs-button-solid">Sign Up</a>
+            </div>
+        </div>
+    </div>
+	<picture class="cs-background">
+	   <!--Mobile Image-->
+	   <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/library.jpg" | resize({ width: 640, height: 822 }) | avif %}" type="image/avif">
+	   <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/library.jpg" | resize({ width: 640, height: 822 }) | webp %}" type="image/webp">
+	   <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/library.jpg" | resize({ width: 640, height: 822 }) | jpeg %}" type="image/jpeg">
+	   <!--Tablet Image-->
+	   <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/library.jpg" | resize({ width: 2046, height: 690 }) | avif %}" type="image/avif">
+	   <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/library.jpg" | resize({ width: 2046, height: 690 }) | webp %}" type="image/webp">
+	   <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/library.jpg" | resize({ width: 2046, height: 690 }) | jpeg %}" type="image/jpeg">
+	   <!--Desktop Image-->
+	   <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/library.jpg" | resize({ width: 3840, height: 832 }) | avif %}" type="image/avif">
+	   <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/library.jpg" | resize({ width: 3840, height: 832 }) | webp %}" type="image/webp">
+	   <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/library.jpg" | resize({ width: 3840, height: 832 }) | jpeg %}" type="image/jpeg">
+	   <img src="{% getUrl "/assets/images/library.jpg" | resize({ width: 3840, height: 832 }) | jpeg %}" alt="shelves of books in a library" width="3840" height="832" loading="lazy" decoding="async" aria-hidden="true">
+	</picture>
+</section>
