@@ -6,7 +6,17 @@
     <div class="cs-container">
         <div class="cs-top">
             <a aria-label="go back to home" class="cs-logo" href="/">
-                <img class="cs-logo-img" loading="lazy" decoding="async" src="/assets/images/logos/logo-horizontal.png" alt="logo" width="168" height="48">
+				<picture class="cs-logo-img">
+				   <!--Mobile Image-->
+				   <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/logos/logo-horizontal.png" | resize({ width: 372, height: 96 }) | avif %}" type="image/avif">
+				   <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/logos/logo-horizontal.png" | resize({ width: 372, height: 96 }) | webp %}" type="image/webp">
+				   <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/logos/logo-horizontal.png" | resize({ width: 372, height: 96 }) | jpeg %}" type="image/jpeg">
+				   <!--Tablet and Desktop Image-->
+				   <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/logos/logo-horizontal.png" | resize({ width: 376, height: 133 }) | avif %}" type="image/avif">
+				   <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/logos/logo-horizontal.png" | resize({ width: 376, height: 133 }) | webp %}" type="image/webp">
+				   <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/logos/logo-horizontal.png" | resize({ width: 376, height: 133 }) | jpeg %}" type="image/jpeg">
+				   <img src="{% getUrl "/assets/images/logos/logo-horizontal.png" | resize({ width: 376, height: 133 }) | jpeg %}" alt="logo of a cartoon dragon in glasses holding a giant feather quill" width="376" height="133" loading="lazy" decoding="async" aria-hidden="true">
+				</picture>
             </a>
             <ul class="cs-ul">
                 <li class="cs-li">
@@ -26,7 +36,7 @@
         <div class="cs-bottom">
             <!--Social-->
             <span class="cs-copyright">
-                © Copyright {% year %} - <a href="https://www.bluecanarywebdesign.com" class="cs-copyright-link">Blue Canary Web Design</a>
+                © Copyright {% year %} - <a href="https://www.bluecanarywebdesign.com" class="cs-copyright-link" target="_blank" rel="noopener noreferrer">Blue Canary Web Design</a>
             </span>
         </div>
     </div>
