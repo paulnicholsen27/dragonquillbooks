@@ -793,7 +793,7 @@
         padding: var(--sectionPadding);
         position: relative;
         z-index: 1;
-		background: linear-gradient(90deg,var(--lightGrey) 0%, var(--mediumGrey) 100%);
+		background: linear-gradient(45deg,var(--lightGrey) 0%, var(--mediumGrey) 100%);
 
         .cs-container {
             width: 100%;
@@ -849,15 +849,17 @@
         }
 
         .cs-logo {
-            width: (168/16rem);
+            width: 100%;
             height: auto;
-            display: block;
+            display: flex;
+			justify-content: center;
         }
 
         .cs-logo-img {
-            width: 100%;
+            width: min(100%, 23.5rem);
             height: auto;
             display: block;
+			margin-inline: auto;
         }
 
         .cs-bottom {
