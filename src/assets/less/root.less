@@ -25,7 +25,7 @@
 		--lightGrey: #F1F0F0;
 		--mediumGrey: #ADA7A7;
 		--darkPurple: #643555;
-		--lightPurple: #BFB7E0;
+		--lightPurple: #d2cde3;
 
 		/* 13px - 16px */
 		--topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
@@ -862,6 +862,13 @@
 			margin-inline: auto;
         }
 
+		.cs-logo-img img {
+			width: 100%;
+			height: auto;
+			display: block;
+			object-fit: contain;
+		}
+
         .cs-bottom {
             width: 100%;
             display: flex;
@@ -894,6 +901,8 @@
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
     #footer-1147 {
+		padding: 2rem;
+
         .cs-top {
             flex-direction: row;
             justify-content: space-between;
@@ -907,5 +916,26 @@
         .cs-copyright {
             margin: 0 auto;
         }
+
+		.cs-logo {
+            display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			width: clamp(14rem, 35vw, 23.5rem);
+			max-width: 100%;
+			height: auto;
+        }
+
+        .cs-logo-img {
+            display: block;
+			width: 100%;
+			margin-inline: 0;
+        }
+
+		.cs-logo-img img {
+			width: 100%;
+			height: auto;
+			object-fit: contain;
+		}
     }
 }

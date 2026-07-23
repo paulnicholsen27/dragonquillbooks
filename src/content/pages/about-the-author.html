@@ -10,7 +10,7 @@ eleventyComputed:
 {% extends "layouts/base.html" %}
 
 {% block head %}
-    
+
     <link rel="stylesheet" href="/assets/css/{{ page.fileSlug }}.css">
 
     <!-- Any page-specific tags that belong in the <head> -->
@@ -19,11 +19,36 @@ eleventyComputed:
 {% endblock %}
 
 {% block body %}
+	{{ macros.banner("About the Author") }}
 
-    <!-- Page HTML goes here, without a <main> wrapper. The <main> tag is already presented in layouts/base.html -->
+	<section id="sbs-867">
+		<div class="cs-container">
+			<picture class="cs-picture">
+			   <!--Mobile Image-->
+			   <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/bonni-headshot.avif" | resize({ width: 576, height: 800 }) | avif %}" type="image/avif">
+			   <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/bonni-headshot.avif" | resize({ width: 576, height: 800 }) | webp %}" type="image/webp">
+			   <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/bonni-headshot.avif" | resize({ width: 576, height: 800 }) | jpeg %}" type="image/jpeg">
+			   <!--Tablet Image-->
+			   <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/bonni-headshot.avif" | resize({ width: 1100, height: 1432}) | avif %}" type="image/avif">
+			   <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/bonni-headshot.avif" | resize({ width: 1100, height: 1432}) | webp %}" type="image/webp">
+			   <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/bonni-headshot.avif" | resize({ width: 1100, height: 1432}) | jpeg %}" type="image/jpeg">
+			   <!--Desktop Image-->
+			   <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/bonni-headshot.avif" | resize({ width: 1238, height: 1550 }) | avif %}" type="image/avif">
+			   <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/bonni-headshot.avif" | resize({ width: 1238, height: 1550 }) | webp %}" type="image/webp">
+			   <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/bonni-headshot.avif" | resize({ width: 1238, height: 1550 }) | jpeg %}" type="image/jpeg">
+			   <img src="{% getUrl "/assets/images/bonni-headshot.avif" | resize({ width: 1238, height: 1550 }) | jpeg %}" alt="headshot of author Bonni Lyn Kuhn" width="1238" height="1550" loading="lazy" decoding="async" aria-hidden="true">
+			</picture>
+			<div class="cs-content">
+				<h2 class="cs-title">Bonni Lyn Kuhn</h2>
+				<p class="cs-text">
+					Bonni is a children's author who loves creating imaginative stories that inspire curiosity, kindness, and a love of reading. Through memorable characters and engaging adventures, Bonni encourages young readers to explore the world around them and believe in themselves. When not writing, she enjoys reading, hiking with her dog Finnegan, spending time with family, and finding inspiration in everyday moments. Bonni is dedicated to helping children discover the joy of books and storytelling. 
+				</p>
+				<a href="/bookshelf" class="cs-button-solid">Learn More</a>
+			</div>
+		</div>
+	</section>
 
-    <!-- If you want the page to have a "CTA", remove the {# and #} below -->
-    {# {% include 'sections/cta.html' %} #}
+	{% include 'sections/cta.html' %}
 
 {% endblock %}
 

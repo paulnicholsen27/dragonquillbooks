@@ -1,0 +1,24 @@
+{% macro banner(text) %}
+	<link rel="stylesheet" href="/assets/css/banner.css">
+
+	<div id="banner-328">
+		<div class="cs-container">
+			<span class="cs-int-title">{{text}}</span>
+		</div>
+		<picture class="cs-background">
+		   <!--Mobile Image-->
+		   <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/books.jpg" | resize({ width: 640, height: 660 }) | avif %}" type="image/avif">
+		   <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/books.jpg" | resize({ width: 640, height: 660 }) | webp %}" type="image/webp">
+		   <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/books.jpg" | resize({ width: 640, height: 660 }) | jpeg %}" type="image/jpeg">
+		   <!--Tablet Image-->
+		   <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/books.jpg" | resize({ width: 2046, height: 646 }) | avif %}" type="image/avif">
+		   <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/books.jpg" | resize({ width: 2046, height: 646 }) | webp %}" type="image/webp">
+		   <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/books.jpg" | resize({ width: 2046, height: 646 }) | jpeg %}" type="image/jpeg">
+		   <!--Desktop Image-->
+		   <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/books.jpg" | resize({ width: 3840, height: 660 }) | avif %}" type="image/avif">
+		   <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/books.jpg" | resize({ width: 3840, height: 660 }) | webp %}" type="image/webp">
+		   <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/books.jpg" | resize({ width: 3840, height: 660 }) | jpeg %}" type="image/jpeg">
+		   <img src="{% getUrl "/assets/images/books.jpg" | resize({ width: 3840, height: 660 }) | jpeg %}" alt="background image of a shelf of books" width="3840" height="660" loading="lazy" decoding="async" aria-hidden="true">
+		</picture>
+	</div>
+{% endmacro %}
