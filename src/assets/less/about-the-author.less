@@ -138,3 +138,100 @@
     }
 }
 
+/*-- -------------------------- -->
+<---           Quote            -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #quote-2141 {
+        /* 80px - 160px */
+        padding: clamp(3rem, 6vw, 8rem) (16/16rem);
+        background-color: #FBF5F1;
+        position: relative;
+        z-index: 1;
+
+        .cs-container {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+            margin-top: (48/16rem);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+            position: relative;
+        }
+
+        .cs-content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .cs-quote-icon {
+            /* 120px - 220px */
+            width: clamp(7.5rem, 12vw, 13.75rem);
+            height: auto;
+            display: block;
+            position: absolute;
+            /* -48px - -96px */
+            top: calc(clamp(3rem, 8vw, 6rem)*-1);
+            z-index: -1;
+        }
+
+        .cs-quote {
+            /* 25px - 49px */
+            font-size: clamp(1.5rem, 4.8vw, 3rem);
+            line-height: 1.4em;
+            text-align: center;
+            max-width: 45ch;
+            /* 24px - 32px */
+            margin: 0 0 clamp(1.5rem, 3vw, 2rem);
+            color: var(--headerColor);
+			font-family: var(--highlightFont);
+        }
+
+        .cs-name {
+            /* 20px - 25px */
+            font-size: clamp(1rem, 2.5vw, 2.25rem);
+            font-weight: 700;
+            line-height: 1.2em;
+            margin: 0 0 (8/16rem) 0;
+            display: block;
+			align-self: flex-end;
+			font-family: var(--highlightFont);
+        }
+
+        .cs-job {
+            font-size: (16/16rem);
+            line-height: 1.5em;
+            color: var(--bodyTextColor);
+            display: block;
+        }
+
+        .cs-flower {
+            width: 50vw;
+            max-width: (640/16rem);
+            height: auto;
+            display: block;
+            position: absolute;
+            z-index: -1;
+        }
+
+        .cs-left {
+            top: 0;
+            left: 0;
+        }
+
+        .cs-right {
+            right: 0;
+            bottom: 0;
+        }
+    }
+}
