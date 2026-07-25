@@ -23,25 +23,33 @@
 
         .cs-content {
             /* set text align to left if content needs to be left aligned */
-            text-align: left;
-            width: 100%;
+            // text-align: left;
+            width: 80%;
             display: flex;
             flex-direction: column;
             /* centers content horizontally, set to flex-start to left align */
-            align-items: flex-start;
             gap: (32/16rem);
+            align-items: center;
         }
 
         .cs-title {
-            font-size: clamp((61/16rem), 8vw, (120/16rem));
+            font-size: clamp((60/16rem), 7vw, (120/16rem));
             color: var(--bodyTextColorWhite);
+			font-weight: 400;
         }
 
         .cs-text {
             color: var(--bodyTextColorWhite);
+			text-align: center;
             &:last-of-type {
                 margin-bottom: (32/16rem);
             }
+        }
+
+        .cs-flex {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .cs-background {
@@ -52,7 +60,7 @@
             top: 0;
             left: 0;
             z-index: -1;
-			
+
 			&:before {
                 /* black overlay box */
                 content: "";
@@ -92,6 +100,9 @@
 
         .cs-flex {
             max-width: (372/16rem);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
     }
 }
