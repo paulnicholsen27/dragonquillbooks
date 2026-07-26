@@ -53,9 +53,9 @@
                         <source media="(min-width: 1024px)" srcset="{% getUrl image | resize({ width: 1600 }) | avif %}" type="image/avif">
                         <source media="(min-width: 1024px)" srcset="{% getUrl image | resize({ width: 1600 }) | webp %}" type="image/webp">
                         <source media="(min-width: 1024px)" srcset="{% getUrl image | resize({ width: 1600 }) | jpeg %}" type="image/jpeg">
-                        <img src="{% getUrl image | resize({ width: 1600 }) | jpeg %}" alt="{{ alt }}" width="1600" loading="lazy" decoding="async" aria-hidden="true">
+                        <img src="{% getUrl image | resize({ width: 1600 }) | jpeg %}" alt="{{ imageAlt }}" width="1600" loading="lazy" decoding="async" aria-hidden="true">
                     </picture>
-                    {% if imageAlt %}<figcaption>{{ imageAlt }}</figcaption>{% endif %}
+                    {% if imageCaption %}<figcaption>{{ imageCaption }}</figcaption>{% endif %}
                 </figure>
                 <div class="cs-article-group">
                     <h1 class="cs-article-title">{{ title }}</h1>
