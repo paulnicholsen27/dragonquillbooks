@@ -5,9 +5,9 @@ description: Lorem markdownum Talia. Carinae equis.
 author: Code Stitch
 date: 2023-06-08T15:27:34.591Z
 tags:
-    - post
-image: /assets/images/blog/landing.jpg
-imageAlt: Kitchen
+  - post
+image: /assets/images/blog/library.jpg
+imageAlt: A library of books
 ---
 
 ## Hospes meus
