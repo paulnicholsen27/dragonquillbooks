@@ -25,17 +25,13 @@ auth:
   last_name_claim: last_name
   avatar_url_claim: avatar_url
 
-# Better Decap + Bridge logo (optional)
-logo_url: https://decapbridge.com/decapcms-with-bridge.svg
+logo_url: https://dragonquillbooks.netlify.app/assets/images/logos/logo.webp
 
 # Add site links in Decap CMS (optional)
 site_url: https://www.dragonquillbooks.com
 
 # Keep this to allow you to edit the cms locally
 local_backend: true
-
-# change url to a link to the image you want to use, no file paths, must be a URL
-logo_url: https://codestitch.app/frontend/images/logo.png
 
 # Image folders
 media_folder: "src/assets/images/blog"
