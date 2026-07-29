@@ -615,6 +615,39 @@
 		.cs-button-solid {
 			display: none;
 		}
+
+		.cs-social {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: (8/16rem);
+			position: absolute;
+			right: (72/16rem);
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+		.cs-social-link {
+			width: (32/16rem);
+			height: (32/16rem);
+			background-color: var(--secondary);
+			border-radius: 50%;
+			border: 1px solid #fff;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			transition: background-color 0.3s;
+
+			&:hover {
+				background-color: var(--secondaryMedium);
+			}
+		}
+
+		.cs-social-icon {
+			width: (12/16rem);
+			height: auto;
+			display: block;
+		}
 	}
 }
 
@@ -781,6 +814,35 @@
 				}
 			}
 		}
+
+		.cs-social {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: (12/16rem);
+		}
+
+		.cs-social-link {
+			width: (40/16rem);
+			height: (40/16rem);
+			background-color: var(--secondary);
+			border-radius: 50%;
+			border: 1px solid #fff;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			transition: background-color 0.3s;
+
+			&:hover {
+				background-color: var(--secondaryMedium);
+			}
+		}
+
+		.cs-social-icon {
+			width: (16/16rem);
+			height: auto;
+			display: block;
+		}
 	}
 }
 
@@ -876,6 +938,40 @@
             flex-direction: column;
             align-items: center;
             gap: (24/16rem);
+        }
+
+        .cs-social {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: (8/16rem);
+        }
+
+        .cs-social-li {
+            list-style: none;
+        }
+
+        .cs-social-link {
+            width: (40/16rem);
+            height: (40/16rem);
+            background-color: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s;
+
+            &:hover {
+                background-color: var(--secondaryMedium);
+            }
+        }
+
+        .cs-social-icon {
+            width: (12/16rem);
+            height: auto;
+            display: block;
         }
 
         .cs-copyright {
