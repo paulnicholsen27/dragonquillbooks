@@ -342,7 +342,7 @@
 		/* prevents padding and border from affecting height and width */
 		box-sizing: border-box;
 		padding: (12/16rem) (16/16rem);
-		background: var(--secondaryMedium);
+		background-image: linear-gradient(225deg, var(--headerColor), var(--secondaryMedium));
 		position: fixed;
 		z-index: 10000;
 		transition: background-color 0.3s;
@@ -625,14 +625,13 @@
 			right: (72/16rem);
 			top: 50%;
 			transform: translateY(-50%);
+			margin-right: (16/16rem);
+
 		}
 
 		.cs-social-link {
-			width: (32/16rem);
-			height: (32/16rem);
-			background-color: var(--secondary);
-			border-radius: 50%;
-			border: 1px solid #fff;
+			width: (48/16rem);
+			height: (48/16rem);
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -823,11 +822,8 @@
 		}
 
 		.cs-social-link {
-			width: (40/16rem);
-			height: (40/16rem);
-			background-color: var(--secondary);
-			border-radius: 50%;
-			border: 1px solid #fff;
+			width: (48/16rem);
+			height: (48/16rem);
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -956,8 +952,6 @@
         .cs-social-link {
             width: (40/16rem);
             height: (40/16rem);
-            background-color: var(--secondary);
-            border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
