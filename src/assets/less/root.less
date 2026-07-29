@@ -728,7 +728,6 @@
 		}
 
 		.cs-ul {
-			width: 100%;
 			margin: 0;
 			padding: 0;
 			display: flex;
@@ -739,25 +738,29 @@
 
 		.cs-li {
 			list-style: none;
-			padding: (40/16rem) 0;
 			/* prevent flexbox from squishing it */
 			flex: none;
+			display: flex;
+			align-items: center;
 		}
 
 		.cs-li-link {
 			/* 14px - 16px */
 			font-size: clamp(0.875rem, 0.6vw, 1rem);
 			font-weight: 700;
-			line-height: 1.5em;
+			line-height: 1;
 			text-transform: uppercase;
 			text-decoration: none;
 			margin: 0;
-			padding: 0 (16/16rem);
+			padding: (40/16rem) (16/16rem);
 			color: var(--bodyTextColorWhite);
-			display: block;
+			display: flex;
+			align-items: center;
 			position: relative;
 			z-index: 1;
 			transition: color 0.3s;
+			/* nudge text down to optically center uppercase letters */
+			transform: translateY(0.1em);
 
 			&:hover {
 				&:before {
