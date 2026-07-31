@@ -1,0 +1,143 @@
+/*-- -------------------------- -->
+<---      Newsletter Modal      -->
+<--- -------------------------- -*/
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+
+    &[aria-hidden="false"] {
+        opacity: 1;
+        visibility: visible;
+
+        .modal-content {
+            transform: translateY(0) scale(1);
+        }
+    }
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+}
+
+.modal-content {
+    position: relative;
+    background: var(--bodyTextColorWhite, #fff);
+    padding: clamp(2rem, 5vw, 3rem);
+    border-radius: (12/16rem);
+    max-width: (500/16rem);
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    transform: translateY(-20px) scale(0.95);
+    transition: transform 0.3s ease;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.modal-close {
+    position: absolute;
+    top: (16/16rem);
+    right: (16/16rem);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: (8/16rem);
+    color: var(--bodyTextColor, #333);
+    transition: color 0.3s ease;
+    line-height: 0;
+
+    &:hover {
+        color: var(--primary, #007bff);
+    }
+}
+
+.modal-title {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    color: var(--headerColor, #1a1a1a);
+    margin: 0 0 (16/16rem) 0;
+    text-align: center;
+    font-family: var(--headerFont);
+}
+
+.modal-text {
+    color: var(--bodyTextColor, #333);
+    text-align: center;
+    margin: 0 0 (24/16rem) 0;
+    line-height: 1.6;
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: (16/16rem);
+}
+
+.form-group {
+    width: 100%;
+}
+
+.modal-input {
+    width: 100%;
+    padding: (16/16rem);
+    border: 1px solid #ddd;
+    border-radius: (8/16rem);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+    &:focus {
+        outline: none;
+        border-color: var(--primary, #007bff);
+        box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+    }
+
+    &::placeholder {
+        color: #999;
+    }
+}
+
+.modal-submit {
+    width: 100%;
+    cursor: pointer;
+}
+
+.modal-privacy {
+    font-size: (12/16rem);
+    color: #666;
+    text-align: center;
+    margin: (16/16rem) 0 0 0;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Prevent body scroll when modal is open */
+body.modal-open {
+    overflow: hidden;
+}

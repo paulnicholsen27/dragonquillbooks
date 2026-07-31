@@ -1,0 +1,59 @@
+<!-- ============================================ -->
+<!--              Newsletter Modal              -->
+<!-- ============================================ -->
+<link rel="stylesheet" href="/assets/css/newsletter-modal.css">
+
+<div id="newsletter-modal" class="modal" aria-hidden="true">
+    <div class="modal-overlay" data-close-modal></div>
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <button class="modal-close" data-close-modal aria-label="Close modal">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+
+        <h2 id="modal-title" class="modal-title">Join Our Newsletter</h2>
+        <p class="modal-text">Be the first to know about new releases, exclusive content, and special offers!</p>
+
+        <!--
+            IMPORTANT: Replace the form action URL below with your Mailchimp form action URL.
+            To find it:
+            1. Go to Mailchimp → Audience → Signup forms → Embedded forms
+            2. Copy the action URL from the generated form code
+            3. It looks like: https://XXXX.us##.list-manage.com/subscribe/post?u=XXXXX&amp;id=XXXXX
+        -->
+        <form
+            action="https://dragonquillbooks.us5.list-manage.com/subscribe/post?u=f0ece3d2ae377b7f77972511c&amp;id=b8888cead1&amp;f_id=0099f2e0f0"
+            method="post"
+            id="mc-embedded-subscribe-form"
+            name="mc-embedded-subscribe-form"
+            class="modal-form"
+            target="_blank"
+        >
+            <div class="form-group">
+                <label for="mce-EMAIL" class="visually-hidden">Email Address</label>
+                <input
+                    type="email"
+                    name="EMAIL"
+                    id="mce-EMAIL"
+                    class="modal-input"
+                    placeholder="Enter your email address"
+                    required
+                    autocomplete="email"
+                >
+            </div>
+
+            <!-- Real people should not fill this in and expect good things - do not remove this or risk form bot signups -->
+            <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                <input type="text" name="b_f0ece3d2ae377b7f77972511c_b8888cead1" tabindex="-1" value="">
+            </div>
+
+            <button type="submit" class="cs-button-solid modal-submit">Subscribe</button>
+        </form>
+
+        <p class="modal-privacy">We respect your privacy. Unsubscribe at any time.</p>
+    </div>
+</div>
+
+<script src="/assets/js/newsletter-modal.js"></script>
