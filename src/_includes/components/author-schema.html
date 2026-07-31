@@ -1,0 +1,42 @@
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "{{ client.domain }}/#author",
+    "name": "Bonni Lyn Kuhn",
+    "url": "{{ client.domain }}/about-the-author/",
+    "image": "{{ client.domain }}/assets/images/bonni-headshot.avif",
+    "description": "Children's author who loves creating imaginative stories that inspire curiosity, kindness, and a love of reading.",
+    "jobTitle": "Children's Author",
+    "worksFor": {
+        "@type": "Organization",
+        "@id": "{{ client.domain }}/#organization",
+        "name": "{{ client.name }}"
+    },
+    {% if client.socials %}
+    "sameAs": [{%- for platform, url in client.socials -%}
+            {% if not loop.first %},{% endif %}"{{ url }}"
+        {%- endfor -%}]
+    {% endif %}
+}
+</script>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "{{ client.domain }}/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "About the Author",
+            "item": "{{ client.domain }}/about-the-author/"
+        }
+    ]
+}
+</script>

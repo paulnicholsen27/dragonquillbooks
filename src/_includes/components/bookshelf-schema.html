@@ -1,0 +1,61 @@
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "{{ client.domain }}/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Bookshelf",
+            "item": "{{ client.domain }}/bookshelf/"
+        }
+    ]
+}
+</script>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Bookshelf",
+    "description": "Browse Dragon Quill Books' collection of imaginative children's stories.",
+    "url": "{{ client.domain }}/bookshelf/",
+    "isPartOf": {
+        "@type": "WebSite",
+        "@id": "{{ client.domain }}/#website"
+    },
+    "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [
+            {
+                "@type": "Book",
+                "@id": "{{ client.domain }}/#johnnys-magical-fishing-trip",
+                "position": 1,
+                "name": "Johnny's Magical Fishing Trip",
+                "description": "Join Johnny as he takes his first fishing trip with his dad and discovers why it is so magical in this heartwarming story. A tale that inspires imagination and family bonds, perfect for young readers.",
+                "author": {
+                    "@type": "Person",
+                    "@id": "{{ client.domain }}/#author",
+                    "name": "Bonni Lyn Kuhn"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "@id": "{{ client.domain }}/#organization",
+                    "name": "{{ client.name }}"
+                },
+                "genre": ["Children's Literature", "Picture Books", "Family"],
+                "audience": {
+                    "@type": "Audience",
+                    "audienceType": "Children"
+                },
+                "image": "{{ client.domain }}/assets/images/books/fishing-trip-front-cover.png"
+            }
+        ]
+    }
+}
+</script>
