@@ -14,17 +14,21 @@
       "dateModified": "{{ updatedDate | isoDate or date | isoDate }}",
       "author": {
         "@type": "Person",
-        "name": "{{ author }}"
+        "@id": "{{ client.domain }}/#author",
+        "name": "{{ author or 'Bonni Lyn Kuhn' }}"
       },
       "publisher": {
         "@type": "Organization",
-        "name": "{{ client.businessName or 'Dragon Quill Books' }}",
+        "@id": "{{ client.domain }}/#organization",
+        "name": "{{ client.name }}",
         "logo": {
           "@type": "ImageObject",
-          "url": "{{ client.domain }}/assets/images/logos/full_logo.svg",
-          "width": 210,
-          "height": 29
+          "url": "{{ client.domain }}/assets/images/logos/logo.webp"
         }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ client.domain }}{{ page.url }}"
       }
     }
     </script>

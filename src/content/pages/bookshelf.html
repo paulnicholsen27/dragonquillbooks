@@ -1,8 +1,10 @@
 ---
-description: "Meta description for the page"
-image: "OPTIONAL - If an image path is specified here, it will be used for that page's OG image. Useful for blog posts (implemented as standard with this kit)"
+description: "Browse Dragon Quill Books' collection of imaginative children's stories. Find heartwarming picture books and adventures perfect for young readers and family reading time."
+image: "/assets/images/pen-and-pad.jpg"
+keywords: "children's books, picture books, kids stories, Dragon Quill Books, bedtime stories, family reading"
+ogDescription: "Discover our collection of imaginative children's books."
 eleventyComputed:
-  title: "{{ page.fileSlug | titleCase }} | {{ client.name }} | {{ client.address.city }}, {{ client.address.state }}"
+  title: "Bookshelf | {{ client.name }}"
   permalink: "/{{ page.fileSlug | slugify }}/"
 ---
 
@@ -13,8 +15,8 @@ eleventyComputed:
 
     <link rel="stylesheet" href="/assets/css/{{ page.fileSlug }}.css">
 
-    <!-- Any page-specific tags that belong in the <head> -->
-
+    <!-- Bookshelf structured data for SEO -->
+    {% include "components/bookshelf-schema.html" %}
 
 {% endblock %}
 

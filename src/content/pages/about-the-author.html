@@ -1,8 +1,10 @@
 ---
-description: "Meta description for the page"
-image: "OPTIONAL - If an image path is specified here, it will be used for that page's OG image. Useful for blog posts (implemented as standard with this kit)"
+description: "Meet Bonni Lyn Kuhn, children's author at Dragon Quill Books. Discover the creative mind behind heartwarming stories that inspire curiosity, kindness, and a love of reading in young readers."
+image: "/assets/images/bonni-headshot.avif"
+keywords: "Bonni Lyn Kuhn, children's author, Dragon Quill Books, kids book author, picture book writer"
+ogDescription: "Meet the author behind Dragon Quill Books' magical children's stories."
 eleventyComputed:
-  title: "{{ page.fileSlug | titleCase }} | {{ client.name }} | {{ client.address.city }}, {{ client.address.state }}"
+  title: "About the Author | {{ client.name }}"
   permalink: "/{{ page.fileSlug | slugify }}/"
 ---
 
@@ -13,8 +15,8 @@ eleventyComputed:
 
     <link rel="stylesheet" href="/assets/css/{{ page.fileSlug }}.css">
 
-    <!-- Any page-specific tags that belong in the <head> -->
-
+    <!-- Author structured data for SEO -->
+    {% include "components/author-schema.html" %}
 
 {% endblock %}
 

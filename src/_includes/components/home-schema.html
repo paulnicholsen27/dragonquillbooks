@@ -1,35 +1,46 @@
 <script type="application/ld+json">
+[
     {
-        "@context": "http://schema.org",
-        "@type": "LocalBusiness",
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "{{ client.domain }}/#organization",
         "name": "{{ client.name }}",
-        {% if preloadImg %}"image": "{{ client.domain }}{{ preloadImg }}",{% endif %}
-        {% if client.phoneFormatted %}"telephone": "{{ client.phoneFormatted }}",{% endif %}
-        {% if client.email %}"email": "{{ client.email }}",{% endif %}
-        {% if client.address %}
-            "address": {
-                "@type": "PostalAddress" {%- if client.address.lineOne -%},
-                    "streetAddress": "{{ client.address.lineOne }}{% if client.address.lineTwo %}, {{ client.address.lineTwo }}{% endif %}"
-                {%- endif -%}
-                {%- if client.address.city -%},
-                    "addressLocality": "{{ client.address.city }}"
-                {%- endif -%}
-                {%- if client.address.state -%},
-                    "addressRegion": "{{ client.address.state }}"
-                {%- endif -%}
-                {%- if client.address.zip -%},
-                    "postalCode": "{{ client.address.zip }}"
-                {%- endif -%}
-                {%- if client.address.country -%},
-                    "addressCountry": "{{ client.address.country }}"
-                {%- endif -%}
-            },
-        {% endif %}
-        {% if client.domain and page.url %}"url": "{{ client.domain }}{{ page.url }}",{% endif %}
+        "url": "{{ client.domain }}",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "{{ client.domain }}/assets/images/logos/logo.webp"
+        },
+        "description": "Dragon Quill Books creates heartwarming children's stories that spark imagination, celebrate family bonds, and inspire young readers.",
         {% if client.socials %}
-            "sameAs": [{%- for platform, url in client.socials -%}
-                    {% if not loop.first %},{% endif %}"{{ url }}"
-                {%- endfor -%}]
+        "sameAs": [{%- for platform, url in client.socials -%}
+                {% if not loop.first %},{% endif %}"{{ url }}"
+            {%- endfor -%}]
+        {% endif %}
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": "{{ client.domain }}/#website",
+        "url": "{{ client.domain }}",
+        "name": "{{ client.name }}",
+        "publisher": {
+            "@id": "{{ client.domain }}/#organization"
+        }
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "@id": "{{ client.domain }}/#author",
+        "name": "Bonni Lyn Kuhn",
+        "url": "{{ client.domain }}/about-the-author/",
+        "image": "{{ client.domain }}/assets/images/bonni-headshot.avif",
+        "description": "Children's author who loves creating imaginative stories that inspire curiosity, kindness, and a love of reading.",
+        "jobTitle": "Children's Author",
+        {% if client.socials %}
+        "sameAs": [{%- for platform, url in client.socials -%}
+                {% if not loop.first %},{% endif %}"{{ url }}"
+            {%- endfor -%}]
         {% endif %}
     }
+]
 </script>
