@@ -17,6 +17,8 @@
         padding: clamp(9rem, 25.95vw, 17.5rem) (16/16rem);
         /* 150px - 160px */
         padding-bottom: clamp(9.375rem, 12.5vw, 10rem);
+        /* Prevent CLS by reserving space */
+        min-height: 50vh;
         position: relative;
         z-index: 1;
         /* prevents overflow from the lines extending past the screen width */
