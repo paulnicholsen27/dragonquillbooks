@@ -14,8 +14,9 @@ twitterCard: "summary_large_image"
 {% extends "layouts/base.html" %}
 
 {% block head %}
-    <!-- Critical styles are loaded first -->
-    <link rel="stylesheet" href="/assets/css/critical.css"/>
+    <!-- Critical styles are loaded asynchronously -->
+    <link rel="preload" href="/assets/css/critical.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/css/critical.css"></noscript>
 
     <!-- If we're in production, defer the rest of the home page styles. In development, always load it. Otherwise the site will break when hot-reload is used. -->
     {% if client.isProduction %}
