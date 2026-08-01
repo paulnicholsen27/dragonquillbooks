@@ -62,7 +62,7 @@ twitterCard: "summary_large_image"
 	   <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/pen-and-pad.jpg" | resize({ width: 3840, height: 1640 }) | avif %}" type="image/avif">
 	   <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/pen-and-pad.jpg" | resize({ width: 3840, height: 1640 }) | webp %}" type="image/webp">
 	   <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/pen-and-pad.jpg" | resize({ width: 3840, height: 1640 }) | jpeg %}" type="image/jpeg">
-	   <img src="{% getUrl "/assets/images/pen-and-pad.jpg" | resize({ width: 3840, height: 1640 }) | jpeg %}" alt="a fountain pen lying on a notebook" width="3840" height="1640" loading="lazy" decoding="async" aria-hidden="true">
+	   <img src="{% getUrl "/assets/images/pen-and-pad.jpg" | resize({ width: 3840, height: 1640 }) | jpeg %}" alt="a fountain pen lying on a notebook" width="3840" height="1640" loading="lazy" fetchpriority="high" decoding="async" aria-hidden="true">
 	</picture>
 </section>
 
