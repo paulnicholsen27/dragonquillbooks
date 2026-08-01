@@ -46,18 +46,18 @@
                 <figure class="cs-article-figure">
                     <picture class="cs-article-image">
                         <!--Mobile Image-->
-                        <source media="(max-width: 600px)" srcset="{% getUrl image | resize({ width: 576 }) | avif %}" type="image/avif">
-                        <source media="(max-width: 600px)" srcset="{% getUrl image | resize({ width: 576 }) | webp %}" type="image/webp">
-                        <source media="(max-width: 600px)" srcset="{% getUrl image | resize({ width: 576 }) | jpeg %}" type="image/jpeg">
+                        <source media="(max-width: 600px)" srcset="{% getUrl image | resize({ width: 400 }) | avif %}" type="image/avif">
+                        <source media="(max-width: 600px)" srcset="{% getUrl image | resize({ width: 400 }) | webp %}" type="image/webp">
+                        <source media="(max-width: 600px)" srcset="{% getUrl image | resize({ width: 400 }) | jpeg %}" type="image/jpeg">
                         <!--Tablet Image-->
-                        <source media="(max-width: 1024px)" srcset="{% getUrl image | resize({ width: 1600 }) | avif %}" type="image/avif">
-                        <source media="(max-width: 1024px)" srcset="{% getUrl image | resize({ width: 1600 }) | webp %}" type="image/webp">
-                        <source media="(max-width: 1024px)" srcset="{% getUrl image | resize({ width: 1600 }) | jpeg %}" type="image/jpeg">
+                        <source media="(max-width: 1024px)" srcset="{% getUrl image | resize({ width: 800 }) | avif %}" type="image/avif">
+                        <source media="(max-width: 1024px)" srcset="{% getUrl image | resize({ width: 800 }) | webp %}" type="image/webp">
+                        <source media="(max-width: 1024px)" srcset="{% getUrl image | resize({ width: 800 }) | jpeg %}" type="image/jpeg">
                         <!--Desktop Image-->
-                        <source media="(min-width: 1024px)" srcset="{% getUrl image | resize({ width: 1600 }) | avif %}" type="image/avif">
-                        <source media="(min-width: 1024px)" srcset="{% getUrl image | resize({ width: 1600 }) | webp %}" type="image/webp">
-                        <source media="(min-width: 1024px)" srcset="{% getUrl image | resize({ width: 1600 }) | jpeg %}" type="image/jpeg">
-                        <img src="{% getUrl image | resize({ width: 1600 }) | jpeg %}" alt="{{ imageAlt }}" width="1600" loading="lazy" decoding="async" aria-hidden="true">
+                        <source media="(min-width: 1024px)" srcset="{% getUrl image | resize({ width: 800 }) | avif %}" type="image/avif">
+                        <source media="(min-width: 1024px)" srcset="{% getUrl image | resize({ width: 800 }) | webp %}" type="image/webp">
+                        <source media="(min-width: 1024px)" srcset="{% getUrl image | resize({ width: 800 }) | jpeg %}" type="image/jpeg">
+                        <img src="{% getUrl image | resize({ width: 800 }) | jpeg %}" alt="{{ imageAlt }}" width="800" loading="lazy" decoding="async" aria-hidden="true">
                     </picture>
                     {% if imageCaption %}<figcaption>{{ imageCaption }}</figcaption>{% endif %}
                 </figure>

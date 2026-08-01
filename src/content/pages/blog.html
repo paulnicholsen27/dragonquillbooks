@@ -35,18 +35,18 @@ eleventyComputed:
                     <article class="cs-article">
                         <picture class="cs-article-image">
                             <!--Mobile Image-->
-                            <source media="(max-width: 600px)" srcset="{% getUrl post.data.image | resize({ width: 576 }) | avif %}" type="image/avif">
-                            <source media="(max-width: 600px)" srcset="{% getUrl post.data.image | resize({ width: 576 }) | webp %}" type="image/webp">
-                            <source media="(max-width: 600px)" srcset="{% getUrl post.data.image | resize({ width: 576 }) | jpeg %}" type="image/jpeg">
+                            <source media="(max-width: 600px)" srcset="{% getUrl post.data.image | resize({ width: 400 }) | avif %}" type="image/avif">
+                            <source media="(max-width: 600px)" srcset="{% getUrl post.data.image | resize({ width: 400 }) | webp %}" type="image/webp">
+                            <source media="(max-width: 600px)" srcset="{% getUrl post.data.image | resize({ width: 400 }) | jpeg %}" type="image/jpeg">
                             <!--Tablet Image-->
-                            <source media="(max-width: 1024px)" srcset="{% getUrl post.data.image | resize({ width: 1142 }) | avif %}" type="image/avif">
-                            <source media="(max-width: 1024px)" srcset="{% getUrl post.data.image | resize({ width: 1142 }) | webp %}" type="image/webp">
-                            <source media="(max-width: 1024px)" srcset="{% getUrl post.data.image | resize({ width: 1142 }) | jpeg %}" type="image/jpeg">
+                            <source media="(max-width: 1024px)" srcset="{% getUrl post.data.image | resize({ width: 571 }) | avif %}" type="image/avif">
+                            <source media="(max-width: 1024px)" srcset="{% getUrl post.data.image | resize({ width: 571 }) | webp %}" type="image/webp">
+                            <source media="(max-width: 1024px)" srcset="{% getUrl post.data.image | resize({ width: 571 }) | jpeg %}" type="image/jpeg">
                             <!--Desktop Image-->
-                            <source media="(min-width: 1024px)" srcset="{% getUrl post.data.image | resize({ width: 1648 }) | avif %}" type="image/avif">
-                            <source media="(min-width: 1024px)" srcset="{% getUrl post.data.image | resize({ width: 1648 }) | webp %}" type="image/webp">
-                            <source media="(min-width: 1024px)" srcset="{% getUrl post.data.image | resize({ width: 1648 }) | jpeg %}" type="image/jpeg">
-                            <img src="{% getUrl post.data.image | resize({ width: 1648 }) | jpeg %}" alt="{{ post.data.alt }}" width="1648" decoding="async">
+                            <source media="(min-width: 1024px)" srcset="{% getUrl post.data.image | resize({ width: 824 }) | avif %}" type="image/avif">
+                            <source media="(min-width: 1024px)" srcset="{% getUrl post.data.image | resize({ width: 824 }) | webp %}" type="image/webp">
+                            <source media="(min-width: 1024px)" srcset="{% getUrl post.data.image | resize({ width: 824 }) | jpeg %}" type="image/jpeg">
+                            <img src="{% getUrl post.data.image | resize({ width: 824 }) | jpeg %}" alt="{{ post.data.alt }}" width="824" decoding="async">
                         </picture>
                         <div class="cs-article-group">
                             <div class="cs-author-group">

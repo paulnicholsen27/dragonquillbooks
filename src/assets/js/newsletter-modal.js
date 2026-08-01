@@ -7,9 +7,23 @@
 
     const closeButtons = modal.querySelectorAll('[data-close-modal]');
     const modalContent = modal.querySelector('.modal-content');
+    let mailchimpLoaded = false;
+
+    // Lazy-load Mailchimp script
+    function loadMailchimp() {
+        if (mailchimpLoaded) return;
+        mailchimpLoaded = true;
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = location.hostname.includes('netlify')
+            ? 'https://chimpstatic.com/mcjs-connected/js/users/f0ece3d2ae377b7f77972511c/f2d5d08aeea365bb80ad2bf66.js'
+            : 'https://chimpstatic.com/mcjs-connected/js/users/f0ece3d2ae377b7f77972511c/0613b1066f38828eb7105f45a.js';
+        document.head.appendChild(script);
+    }
 
     // Open modal
     function openModal() {
+        loadMailchimp();
         modal.setAttribute('aria-hidden', 'false');
         document.body.classList.add('modal-open');
 
