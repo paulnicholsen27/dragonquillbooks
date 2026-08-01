@@ -18,6 +18,11 @@ twitterCard: "summary_large_image"
     <link rel="preload" href="/assets/css/critical.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/assets/css/critical.css"></noscript>
 
+    <!-- Preload section CSS to avoid chained requests -->
+    <link rel="preload" href="/assets/css/johnny.css" as="style">
+    <link rel="preload" href="/assets/css/cta.css" as="style">
+    <link rel="preload" href="/assets/css/newsletter-modal.css" as="style">
+
     <!-- If we're in production, defer the rest of the home page styles. In development, always load it. Otherwise the site will break when hot-reload is used. -->
     {% if client.isProduction %}
         <link rel="preload" href="/assets/css/local.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
