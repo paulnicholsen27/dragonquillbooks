@@ -1,6 +1,6 @@
 module.exports = {
     name: "Dragon Quill Books",
-	email: "blk@dragonquillbooks.com",
+	email: "info@dragonquillbooks.com",
     socials: {
 		facebook: "https://www.facebook.com/profile.php?id=61590554107424",
 		instagram: "https://www.instagram.com/bonnilynkuhn/",
