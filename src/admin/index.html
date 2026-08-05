@@ -23,38 +23,7 @@
     <!-- Edit this script to customize the preview pane for your blog posts.  -->
     <!-- Documentation: https://decapcms.org/docs/customization/ -->
     <script>
-        const BlogPreview = ({ entry, widgetFor, getAsset }) => {
-            const data = entry.get("data").toJS();
-            const { title, author, date: rawDate, image } = data;
-            const date = typeof rawDate === "string" ? new Date(rawDate) : rawDate;
-            let formattedDate = "";
-            if (date) {
-                formattedDate = Intl.DateTimeFormat("en-US", {
-                    month: "long",
-                    day: "numeric",
-                    year: "numeric"
-                }).format(date);
-            }
-
-            const cover = getAsset(image);
-
-            // Use h() from Decap CMS's bundled React
-            const h = window.CMS.h;
-            return h('div', { className: 'blog' },
-                h('h1', { className: 'title' }, title),
-                h('div', { className: 'metadata' },
-                    h('span', { className: 'author' }, author),
-                    h('span', { className: 'dot' }),
-                    h('span', { className: 'date' }, formattedDate)
-                ),
-                h('img', { src: cover?.toString(), className: 'cover', alt: 'Cover' }),
-                h('hr', { className: 'divider' }),
-                h('div', { className: 'markdown' }, widgetFor('body'))
-            );
-        };
-
-        // Register the elements and styles for the "blog" collection
-        CMS.registerPreviewTemplate("blog", BlogPreview);
+        // Just register the preview styles - use default preview template
         CMS.registerPreviewStyle("/admin/decap-preview-styles.css");
 
         // Auto-populate author fields from logged-in user on new entries
