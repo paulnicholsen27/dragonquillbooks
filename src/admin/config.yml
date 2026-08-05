@@ -47,16 +47,8 @@ collections:
       slug: "{{slug}}"
       fields:
           - { label: "Title", name: "title", widget: "string" }
-          - {
-                label: "URL Slug",
-                name: "url",
-                widget: "string",
-                hint: 'Specify where the page will be written to. If you use "Blog Post", the post will be accessible from "blog/blog-post"',
-            }
           - { label: "Description", name: "description", widget: "string" }
           - { label: "Featured Post", name: "featured", widget: "boolean", default: false, hint: "Toggle on to display this post in the featured section" }
-          - { label: "Author", name: "author", widget: "string", hint: "Auto-filled from your login" }
-          - { label: "Author Avatar", name: "authorAvatar", widget: "string", required: false, hint: "Auto-filled from your login profile picture" }
           - { label: "Date", name: "date", widget: "datetime" }
           - { label: "Featured Image", name: "image", widget: "image" }
           - { label: "Image Caption", name: "imageCaption", widget: "string", required: false, hint: "Optional caption for the featured image" }

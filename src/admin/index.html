@@ -26,11 +26,21 @@
         // Just register the preview styles - use default preview template
         CMS.registerPreviewStyle("/admin/decap-preview-styles.css");
 
-        // Auto-populate author fields from logged-in user on new entries
+        // Auto-populate fields on save
         CMS.registerEventListener({
             name: 'preSave',
             handler: async ({ entry }) => {
                 let data = entry.get('data');
+
+                // Auto-generate URL slug from title if empty
+                const title = data.get('title');
+                if (!data.get('url') && title) {
+                    const slug = title
+                        .toLowerCase()
+                        .replace(/[^a-z0-9]+/g, '-')
+                        .replace(/^-|-$/g, '');
+                    data = data.set('url', slug);
+                }
 
                 // Try to get user from CMS (works with DecapBridge PKCE)
                 let user;
