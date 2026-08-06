@@ -29,17 +29,33 @@
         // Auto-populate fields on save
         CMS.registerEventListener({
             name: 'preSave',
-            handler: async ({ entry }) => {
+            handler: async ({ entry, author }) => {
                 let data = entry.get('data');
-
-                // Auto-generate URL slug from title if empty
+                const slug = entry.get('slug'); // Current entry's file slug
                 const title = data.get('title');
-                if (!data.get('url') && title) {
-                    const slug = title
-                        .toLowerCase()
-                        .replace(/[^a-z0-9]+/g, '-')
-                        .replace(/^-|-$/g, '');
-                    data = data.set('url', slug);
+
+                // Generate URL slug from title
+                const urlSlug = title
+                    .toLowerCase()
+                    .replace(/[^a-z0-9]+/g, '-')
+                    .replace(/^-|-$/g, '');
+
+                // Check if this slug already exists (for new entries or title changes)
+                if (!data.get('url') || data.get('url') !== urlSlug) {
+                    try {
+                        // Try to fetch the blog URL to see if it exists
+                        const response = await fetch(`/blog/${urlSlug}/`, { method: 'HEAD' });
+                        if (response.ok) {
+                            throw new Error(`A blog post with the URL "${urlSlug}" already exists. Please use a different title.`);
+                        }
+                    } catch (e) {
+                        // If it's our error, rethrow it
+                        if (e.message.includes('already exists')) {
+                            throw e;
+                        }
+                        // Otherwise, 404 means slug is available - continue
+                    }
+                    data = data.set('url', urlSlug);
                 }
 
                 // Try to get user from CMS (works with DecapBridge PKCE)
