@@ -1,3 +1,2 @@
-replace blog entry author image default with logo buffer
 
-Search for TODO
+ç
