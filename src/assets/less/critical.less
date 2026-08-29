@@ -230,24 +230,22 @@
 
 	#hero-330 {
 		.cs-title {
-			animation: slideInTitle 1s ease-in-out 1;
+			animation: fadeIn 1.5s ease-in-out 1;
 		}
 
 		.cs-subtitle {
-			animation: slideInTitle 1s ease-in-out 1;
-			animation-delay: .4s;
+			animation: fadeIn 1.5s ease-in-out 1;
+			animation-delay: .6s;
 			animation-fill-mode: backwards;
 		}
 	}
 }
 
-@keyframes slideInTitle {
+@keyframes fadeIn {
   0% {
-    transform: translateY(200px);
     opacity: 0;
   }
   100% {
-    transform: translateY(0);
     opacity: 1;
   }
 }
