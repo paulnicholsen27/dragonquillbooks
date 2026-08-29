@@ -101,6 +101,11 @@
                 clamp(6.25rem, 17vw, 12.5rem);
             /* clips img tag corners */
             overflow: hidden;
+			transition: transform 0.3s ease;
+
+			&:hover {
+				transform: scale(1.05);
+			}
 
             img {
                 position: absolute;
@@ -110,6 +115,7 @@
                 width: 100%;
                 object-fit: cover;
 				object-position: center 20%;
+
             }
         }
     }
