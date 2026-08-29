@@ -92,6 +92,8 @@
             color: var(--bodyTextColorWhite);
             position: relative;
 			font-family: "Dancing Script", Arial, sans-serif;
+
+
         }
 
         .cs-accent {
@@ -224,3 +226,28 @@
     }
 }
 
+@media only screen and (min-width: 768px) {
+
+	#hero-330 {
+		.cs-title {
+			animation: slideInTitle 1s ease-in-out 1;
+		}
+
+		.cs-subtitle {
+			animation: slideInTitle 1s ease-in-out 1;
+			animation-delay: .4s;
+			animation-fill-mode: backwards;
+		}
+	}
+}
+
+@keyframes slideInTitle {
+  0% {
+    transform: translateY(200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
