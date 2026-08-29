@@ -207,6 +207,17 @@
 	}
 }
 
+/* Tablet and Desktop Logo Interaction */
+@media only screen and (min-width: 48rem) {
+	#banner-logo {
+		transition: transform 0.2s ease;
+
+		&:hover {
+			transform: scale(1.15);
+		}
+	}
+}
+
 /* Desktop Utilities */
 @media only screen and (min-width: 64rem) {
 	.cs-hide-on-mobile {
@@ -216,6 +227,7 @@
 	.cs-hide-on-desktop {
 		display: none !important;
 	}
+
 }
 
 /* Base Element Styles */
