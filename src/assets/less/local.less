@@ -1,0 +1,65 @@
+@media only screen and (min-width: 0rem) {
+    #legal-829,
+    #legal-830 {
+        padding: var(--sectionPadding);
+        background: linear-gradient(180deg, rgba(210, 205, 227, 0.26) 0%, rgba(241, 240, 240, 0.7) 100%);
+
+        .cs-container {
+            width: 100%;
+            max-width: (960/16rem);
+            margin: auto;
+        }
+
+        .cs-content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: (12/16rem);
+        }
+
+        .cs-title {
+            margin-bottom: 0;
+        }
+
+        .cs-text {
+            max-width: none;
+            width: 100%;
+            margin: 0;
+            text-align: left;
+        }
+
+        h3 {
+            font-size: clamp(1.125rem, 2vw, 1.5rem);
+            line-height: 1.3em;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            color: var(--headerColor);
+            margin-top: (8/16rem);
+        }
+
+        ul {
+            margin: 0 0 (8/16rem) 0;
+            padding-left: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: (10/16rem);
+            color: var(--bodyTextColor);
+        }
+
+        li {
+            font-size: clamp(1rem, 1.5vw, 1.125rem);
+            line-height: 1.7em;
+        }
+
+        a {
+            color: var(--secondary);
+            text-decoration: underline;
+            text-underline-offset: 0.15em;
+
+            &:hover {
+                color: var(--darkPurple);
+            }
+        }
+    }
+}

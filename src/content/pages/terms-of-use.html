@@ -1,0 +1,79 @@
+---
+description: "Terms of Use for Dragon Quill Books. Read the rules for using our website, content, and related materials."
+keywords: "terms of use, website terms, Dragon Quill Books, site usage policy"
+ogDescription: "Read the terms of use for Dragon Quill Books and understand the rules for using our website and materials."
+eleventyComputed:
+  title: "Terms of Use | {{ client.name }}"
+  permalink: "/{{ page.fileSlug | slugify }}/"
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/local.css">
+{% endblock %}
+
+{% block body %}
+    {{ macros.banner("Terms of Use") }}
+
+    <section id="legal-830">
+        <div class="cs-container">
+            <div class="cs-content">
+                <p class="cs-text">
+                    By accessing or using the Dragon Quill Books website, you agree to be bound by these Terms of Use. If you do not agree with these terms, please do not use our site.
+                </p>
+
+                <h3>Use of the Site</h3>
+                <p class="cs-text">
+                    This website is intended for personal, informational, and educational use. You may browse, read, and share content for non-commercial purposes as long as you do not interfere with the site’s operation or violate any applicable laws.
+                </p>
+
+                <h3>Intellectual Property</h3>
+                <p class="cs-text">
+                    All content on this website, including text, graphics, logos, images, book covers, and design elements, is owned by Dragon Quill Books, Bonni Lyn Kuhn, or their licensors and is protected by copyright and other intellectual property laws. You may not reproduce, distribute, modify, or commercially exploit any materials from this site without prior written permission.
+                </p>
+
+                <h3>Prohibited Conduct</h3>
+                <p class="cs-text">
+                    You agree not to:
+                </p>
+                <ul>
+                    <li>Use the site for unlawful, fraudulent, or harmful purposes.</li>
+                    <li>Attempt to access or interfere with secure areas of the website.</li>
+                    <li>Collect or scrape content from the site without authorization.</li>
+                    <li>Upload or transmit harmful code, spam, or other disruptive material.</li>
+                </ul>
+
+                <h3>User Submissions</h3>
+                <p class="cs-text">
+                    If you contact us by email or otherwise provide comments, questions, or other information, you are responsible for the content of that communication. By sending us information, you confirm that the content is accurate and lawful, and you grant us the right to use it as needed to respond to your inquiry or support your request.
+                </p>
+
+                <h3>Third-Party Links</h3>
+                <p class="cs-text">
+                    Our website may include links to social media pages, purchase platforms, or other external websites. These links are provided for convenience only, and we do not control or assume responsibility for the content, privacy practices, or availability of those third-party sites.
+                </p>
+
+                <h3>Disclaimer</h3>
+                <p class="cs-text">
+                    The content on this website is provided for general informational and entertainment purposes. We make no warranties, express or implied, regarding the completeness, accuracy, reliability, or suitability of the information for any particular purpose. We reserve the right to update, revise, or remove content at any time without notice.
+                </p>
+
+                <h3>Limitation of Liability</h3>
+                <p class="cs-text">
+                    To the fullest extent permitted by law, Dragon Quill Books shall not be liable for any direct, indirect, incidental, consequential, or special damages arising from your use of the website or reliance on its content, including loss of data, business interruption, or other losses.
+                </p>
+
+                <h3>Changes to These Terms</h3>
+                <p class="cs-text">
+                    We may revise these Terms of Use at any time. Continued use of the website after changes are posted means you accept the updated terms.
+                </p>
+
+                <h3>Contact</h3>
+                <p class="cs-text">
+                    If you have questions about these Terms of Use, please contact us at <a href="mailto:{{ client.email }}">{{ client.email }}</a>.
+                </p>
+            </div>
+        </div>
+    </section>
+{% endblock %}
