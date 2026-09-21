@@ -1,0 +1,102 @@
+---
+description: "Invite children's author Bonni Lyn Kuhn to your school or library for an engaging author visit filled with stories, creativity, and conversation."
+image: "/assets/images/bonni-headshot.avif"
+keywords: "children's author school visits, elementary school author visit, library author event, Bonni Lyn Kuhn, Dragon Quill Books"
+ogDescription: "Bring stories to life with a memorable school or library visit from children's author Bonni Lyn Kuhn."
+eleventyComputed:
+  title: "School Visits | {{ client.name }}"
+  permalink: "/{{ page.fileSlug | slugify }}/"
+---
+
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+
+    <link rel="stylesheet" href="/assets/css/{{ page.fileSlug }}.css">
+
+    <!-- Any page-specific tags that belong in the <head> -->
+
+
+{% endblock %}
+
+{% block body %}
+
+  {{ macros.banner("School Visits") }}
+
+  <section id="visit-intro">
+    <div class="cs-container">
+      <picture class="cs-picture">
+        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/bonni-headshot.avif" | resize({ width: 480, height: 600 }) | avif %}" type="image/avif">
+        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/bonni-headshot.avif" | resize({ width: 480, height: 600 }) | webp %}" type="image/webp">
+        <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/bonni-headshot.avif" | resize({ width: 600, height: 750 }) | avif %}" type="image/avif">
+        <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/bonni-headshot.avif" | resize({ width: 600, height: 750 }) | webp %}" type="image/webp">
+        <img src="{% getUrl "/assets/images/bonni-headshot.avif" | resize({ width: 600, height: 750 }) | jpeg %}" alt="Children's author Bonni Lyn Kuhn" width="600" height="750" loading="eager" decoding="async">
+      </picture>
+      <div class="cs-content">
+        <span class="cs-topper">Meet the Author</span>
+        <h1 class="cs-title">Bring the Joy of Storytelling to Your Students</h1>
+        <p class="cs-text">
+          A visit from Bonni Lyn Kuhn turns reading into a shared adventure. Through an animated read-aloud, a peek into the writing process, and plenty of student participation, young readers discover how ideas become books and why their own stories matter.
+        </p>
+        <a href="mailto:{{ client.email }}?subject=School%20Visit%20Inquiry" class="cs-button-solid">Plan a Visit</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="visit-experience">
+    <div class="cs-container">
+      <div class="cs-content">
+        <span class="cs-topper">A Visit to Remember</span>
+        <h2 class="cs-title">More Than a Read-Aloud</h2>
+        <p class="cs-text">Each visit is shaped for the age and interests of your group, with a warm, interactive format that welcomes curious questions and creative thinking.</p>
+      </div>
+      <ul class="cs-card-group">
+        <li class="cs-item">
+          <span class="cs-number">01</span>
+          <h3 class="cs-h3">Story Time</h3>
+          <p class="cs-item-text">Students experience Bonni's books read by the author, with moments to predict, notice, laugh, and wonder together.</p>
+        </li>
+        <li class="cs-item">
+          <span class="cs-number">02</span>
+          <h3 class="cs-h3">Behind the Book</h3>
+          <p class="cs-item-text">Bonni shares where story ideas begin and how imagination, drafting, and persistence help turn an idea into a finished book.</p>
+        </li>
+        <li class="cs-item">
+          <span class="cs-number">03</span>
+          <h3 class="cs-h3">Questions and Creativity</h3>
+          <p class="cs-item-text">A lively question-and-answer session gives students space to explore authorship and begin imagining stories of their own.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="visit-details">
+    <div class="cs-container">
+      <div class="cs-content">
+        <span class="cs-topper">Made for Your Community</span>
+        <h2 class="cs-title">Flexible Visits for Young Readers</h2>
+        <p class="cs-text">Whether you are planning a classroom gathering, school-wide literacy event, or library program, Bonni will work with you to create an age-appropriate experience for your readers.</p>
+        <ul class="cs-list">
+          <li><strong>Audience:</strong> Early learners and elementary readers</li>
+          <li><strong>Setting:</strong> Schools, classrooms, libraries, and community groups</li>
+          <li><strong>Format:</strong> In-person or virtual options based on availability</li>
+          <li><strong>Focus:</strong> Reading, writing, imagination,  and family connections</li>
+        </ul>
+      </div>
+      <aside class="cs-inquiry">
+        <span class="cs-script">Let's create a special day.</span>
+        <h3 class="cs-h3">Start the Conversation</h3>
+        <p class="cs-item-text">Share your location, preferred date, student age range, group size, and the kind of program you have in mind.</p>
+        <a href="mailto:{{ client.email }}?subject=School%20Visit%20Inquiry" class="cs-button-solid">Ask About Availability</a>
+      </aside>
+    </div>
+  </section>
+
+  {% include 'sections/cta.html' %}
+
+{% endblock %}
+
+
+
+
