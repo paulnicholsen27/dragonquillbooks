@@ -1,0 +1,111 @@
+---
+description: "Bring Bonni Lyn Kuhn's children's books into the classroom with imaginative lesson plans for early learners, elementary readers, and growing writers."
+image: "/assets/images/books/fishing-trip-front-cover.png"
+keywords: "children's book lesson plans, elementary reading activities, classroom story activities, Bonni Lyn Kuhn, Johnny's Magical Fishing Trip"
+ogDescription: "Explore flexible lesson plans that help young readers connect, create, and learn with Bonni's books."
+eleventyComputed:
+  title: "Lesson Plans | {{ client.name }}"
+  permalink: "/{{ page.fileSlug | slugify }}/"
+---
+
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+
+    <link rel="stylesheet" href="/assets/css/{{ page.fileSlug }}.css">
+
+    <!-- Any page-specific tags that belong in the <head> -->
+
+
+{% endblock %}
+
+{% block body %}
+
+  {{ macros.banner("Lesson Plans") }}
+
+  <section id="lesson-intro">
+    <div class="cs-container">
+      <div class="cs-content">
+        <span class="cs-topper">Stories That Keep Teaching</span>
+        <h1 class="cs-title">Turn Story Time Into Discovery</h1>
+        <p class="cs-text">
+          Bonni's books invite children to wonder, talk, create, and connect. These flexible lesson plans help teachers, librarians, homeschool families, and caregivers carry those conversations beyond the final page with age-appropriate activities built around literacy, imagination, and real-world discovery.
+        </p>
+        <a href="/bookshelf" class="cs-button-solid">Explore the Books</a>
+      </div>
+      <picture class="cs-picture">
+        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/books/fishing-trip-front-cover.png" | resize({ width: 480, height: 480 }) | avif %}" type="image/avif">
+        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/books/fishing-trip-front-cover.png" | resize({ width: 480, height: 480 }) | webp %}" type="image/webp">
+        <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/books/fishing-trip-front-cover.png" | resize({ width: 620, height: 620 }) | avif %}" type="image/avif">
+        <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/books/fishing-trip-front-cover.png" | resize({ width: 620, height: 620 }) | webp %}" type="image/webp">
+        <img src="{% getUrl "/assets/images/books/fishing-trip-front-cover.png" | resize({ width: 620, height: 620 }) | jpeg %}" alt="Cover of Johnny's Magical Fishing Trip by Bonni Lyn Kuhn" width="620" height="620" loading="eager" decoding="async">
+      </picture>
+    </div>
+  </section>
+
+  <section id="lesson-levels">
+    <div class="cs-container">
+      <div class="cs-content">
+        <span class="cs-topper">Choose a Learning Level</span>
+        <h2 class="cs-title">A Story for Every Stage</h2>
+        <p class="cs-text">Each plan can stand alone or grow into a longer unit, making it easy to fit Bonni's stories into a classroom, library program, or learning day at home.</p>
+      </div>
+      <ul class="cs-card-group">
+        <li class="cs-item">
+          <span class="cs-grade">Pre-K–K</span>
+          <h3 class="cs-h3">Little Listeners</h3>
+          <p class="cs-item-text">Build listening skills and story confidence through read-aloud prompts, picture walks, movement, and simple hands-on play.</p>
+          <ul class="cs-list">
+            <li>Characters and feelings</li>
+            <li>Sequencing through pictures</li>
+            <li>Drawing and dramatic play</li>
+          </ul>
+        </li>
+        <li class="cs-item">
+          <span class="cs-grade">Grades 1–3</span>
+          <h3 class="cs-h3">Curious Readers</h3>
+          <p class="cs-item-text">Strengthen comprehension while children connect a story's choices, setting, and themes to their own experiences.</p>
+          <ul class="cs-list">
+            <li>Prediction and recall</li>
+            <li>Vocabulary in context</li>
+            <li>Nature and family connections</li>
+          </ul>
+        </li>
+        <li class="cs-item">
+          <span class="cs-grade">Grades 4–6</span>
+          <h3 class="cs-h3">Growing Storytellers</h3>
+          <p class="cs-item-text">Invite older readers to look closely at craft, point of view, and theme before shaping stories and projects of their own.</p>
+          <ul class="cs-list">
+            <li>Theme and character analysis</li>
+            <li>Creative and reflective writing</li>
+            <li>Research and discussion</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="lesson-feature">
+    <div class="cs-container">
+      <div class="cs-content">
+        <span class="cs-topper">Featured Book</span>
+        <h2 class="cs-title">Learning With Johnny's Magical Fishing Trip</h2>
+        <p class="cs-text">Johnny's first fishing adventure opens the door to lessons about family traditions, patience, outdoor observation, and the excitement of trying something new.</p>
+        <div class="cs-activities" aria-label="Suggested lesson activities">
+          <div class="cs-activity"><strong>Read</strong><span>Pause to predict what Johnny will discover next.</span></div>
+          <div class="cs-activity"><strong>Explore</strong><span>Investigate fish habitats, local waterways, and outdoor safety.</span></div>
+          <div class="cs-activity"><strong>Create</strong><span>Write or illustrate a magical first-time adventure.</span></div>
+        </div>
+        <a href="mailto:{{ client.email }}?subject=Dragon%20Quill%20Lesson%20Plans" class="cs-button-solid" target="_blank">Ask About Lesson Plans</a>
+      </div>
+    </div>
+  </section>
+
+  {% include 'sections/cta.html' %}
+
+{% endblock %}
+
+
+
+

@@ -1,0 +1,234 @@
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+	#lesson-intro,
+	#lesson-levels,
+	#lesson-feature {
+		padding: var(--sectionPadding);
+
+		.cs-container {
+			width: 100%;
+			max-width: (1280/16rem);
+			margin: auto;
+		}
+
+		.cs-topper {
+			color: var(--darkPurple);
+		}
+
+		.cs-button-solid {
+			margin-top: (32/16rem);
+			color: #fff;
+			background-color: var(--secondary);
+		}
+	}
+
+	#lesson-intro {
+		background-color: var(--lightPurple);
+
+		.cs-container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: clamp(3rem, 8vw, 5rem);
+		}
+
+		.cs-content {
+			max-width: (610/16rem);
+		}
+
+		.cs-text {
+			max-width: 52ch;
+		}
+
+		.cs-picture {
+			display: block;
+			width: 100%;
+			max-width: (510/16rem);
+			aspect-ratio: 1;
+			border-radius: 0 clamp(4rem, 16vw, 10rem) 0 clamp(4rem, 16vw, 10rem);
+			box-shadow: 0 (12/16rem) (40/16rem) rgba(34, 30, 30, 0.16);
+			overflow: hidden;
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+
+	#lesson-levels {
+		background-color: #fbf5f1;
+
+		.cs-content {
+			max-width: (700/16rem);
+			margin: 0 auto clamp(2.5rem, 6vw, 4rem);
+			text-align: center;
+		}
+
+		.cs-text {
+			margin: auto;
+		}
+
+		.cs-card-group {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: (24/16rem);
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+		.cs-item {
+			padding: clamp(1.75rem, 5vw, 2.5rem);
+			background-color: #fff;
+			border-top: (5/16rem) solid var(--primary);
+			border-radius: (4/16rem);
+			box-shadow: 0 (8/16rem) (24/16rem) rgba(34, 30, 30, 0.08);
+		}
+
+		.cs-grade {
+			display: inline-block;
+			margin-bottom: (16/16rem);
+			padding: (8/16rem) (12/16rem);
+			color: var(--darkPurple);
+			background-color: var(--primaryLight);
+			border-radius: (4/16rem);
+			font-size: (14/16rem);
+			font-weight: 700;
+			line-height: 1;
+			text-transform: uppercase;
+		}
+
+		.cs-h3 {
+			margin: 0 0 (12/16rem);
+			font-size: clamp(1.35rem, 4vw, 1.75rem);
+			line-height: 1.25em;
+		}
+
+		.cs-item-text,
+		.cs-list {
+			font-size: (16/16rem);
+			line-height: 1.6em;
+		}
+
+		.cs-item-text {
+			margin-bottom: (20/16rem);
+		}
+
+		.cs-list {
+			padding-left: (20/16rem);
+
+			li::marker {
+				color: var(--secondary);
+			}
+		}
+	}
+
+	#lesson-feature {
+		position: relative;
+		background-color: var(--secondary);
+		overflow: hidden;
+
+		&:before {
+			content: "";
+			position: absolute;
+			inset: 0;
+			opacity: 0.12;
+			background-image: url("/assets/images/pen-and-pad.jpg");
+			background-position: center;
+			background-size: cover;
+		}
+
+		.cs-container {
+			position: relative;
+		}
+
+		.cs-content {
+			max-width: (800/16rem);
+		}
+
+		.cs-topper {
+			color: var(--secondaryLight);
+		}
+
+		.cs-title,
+		.cs-text {
+			color: var(--bodyTextColorWhite);
+		}
+
+		.cs-text {
+			max-width: 60ch;
+		}
+
+		.cs-activities {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: (12/16rem);
+			margin-top: (32/16rem);
+		}
+
+		.cs-activity {
+			display: grid;
+			grid-template-columns: (72/16rem) 1fr;
+			gap: (12/16rem);
+			padding: (16/16rem);
+			color: var(--bodyTextColorWhite);
+			background-color: rgba(255, 255, 255, 0.1);
+			border-left: (3/16rem) solid var(--secondaryMedium);
+			font-size: (16/16rem);
+			line-height: 1.5em;
+		}
+
+		.cs-button-solid {
+			color: var(--bodyTextColor);
+			background-color: var(--secondaryLight);
+
+			&:hover {
+				color: #fff;
+			}
+		}
+	}
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+	#lesson-levels {
+		.cs-card-group {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	#lesson-feature {
+		.cs-activities {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		.cs-activity {
+			grid-template-columns: 1fr;
+		}
+	}
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+	#lesson-intro {
+		.cs-container {
+			flex-direction: row;
+			justify-content: space-between;
+		}
+
+		.cs-content,
+		.cs-picture {
+			width: 48%;
+		}
+
+		.cs-picture {
+			transition: transform 0.3s ease;
+
+			&:hover {
+				transform: scale(1.03);
+			}
+		}
+	}
+}

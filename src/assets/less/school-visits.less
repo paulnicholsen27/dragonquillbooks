@@ -1,0 +1,244 @@
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+	#visit-intro,
+	#visit-experience,
+	#visit-details {
+		padding: var(--sectionPadding);
+
+		.cs-container {
+			width: 100%;
+			max-width: (1280/16rem);
+			margin: auto;
+		}
+
+		.cs-topper {
+			color: var(--darkPurple);
+		}
+
+		.cs-button-solid {
+			margin-top: (32/16rem);
+			color: #fff;
+			background-color: var(--secondary);
+			line-height: 1.3em;
+		}
+	}
+
+	#visit-intro {
+		background-color: #fbf5f1;
+
+		.cs-container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: clamp(3rem, 8vw, 5rem);
+		}
+
+		.cs-picture {
+			display: block;
+			width: 100%;
+			max-width: (500/16rem);
+			aspect-ratio: 4 / 5;
+			border-radius: clamp(4rem, 15vw, 9rem) 0 clamp(4rem, 15vw, 9rem) 0;
+			box-shadow: 0 (12/16rem) (40/16rem) rgba(34, 30, 30, 0.16);
+			overflow: hidden;
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				object-position: center 20%;
+			}
+		}
+
+		.cs-content {
+			max-width: (610/16rem);
+		}
+
+		.cs-text {
+			max-width: 52ch;
+		}
+	}
+
+	#visit-experience {
+		background-color: var(--lightPurple);
+
+		.cs-content {
+			max-width: (720/16rem);
+			margin: 0 auto clamp(2.5rem, 6vw, 4rem);
+			text-align: center;
+		}
+
+		.cs-text {
+			margin: auto;
+		}
+
+		.cs-card-group {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: (24/16rem);
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+		.cs-item {
+			position: relative;
+			padding: clamp(1.75rem, 5vw, 2.5rem);
+			background-color: #fff;
+			border-bottom: (5/16rem) solid var(--secondaryMedium);
+			border-radius: (4/16rem);
+			box-shadow: 0 (8/16rem) (24/16rem) rgba(34, 30, 30, 0.08);
+			overflow: hidden;
+		}
+
+		.cs-number {
+			display: block;
+			margin-bottom: (12/16rem);
+			color: var(--darkPurple);
+			font-family: var(--highlightFont);
+			font-size: (48/16rem);
+			line-height: 1;
+		}
+
+		.cs-h3 {
+			margin: 0 0 (12/16rem);
+			font-size: clamp(1.35rem, 4vw, 1.75rem);
+			line-height: 1.25em;
+		}
+
+		.cs-item-text {
+			font-size: (16/16rem);
+			line-height: 1.6em;
+		}
+	}
+
+	#visit-details {
+		position: relative;
+		background-color: var(--secondary);
+		overflow: hidden;
+
+		&:before {
+			content: "";
+			position: absolute;
+			inset: 0;
+			opacity: 0.1;
+			background-image: url("/assets/images/books.jpg");
+			background-position: center;
+			background-size: cover;
+		}
+
+		.cs-container {
+			position: relative;
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: clamp(2.5rem, 7vw, 5rem);
+			align-items: center;
+		}
+
+		.cs-content {
+			max-width: (680/16rem);
+		}
+
+		.cs-topper {
+			color: var(--secondaryLight);
+		}
+
+		.cs-title,
+		.cs-text,
+		.cs-list {
+			color: var(--bodyTextColorWhite);
+		}
+
+		.cs-list {
+			display: grid;
+			gap: (12/16rem);
+			margin-top: (28/16rem);
+			padding-left: (20/16rem);
+			font-size: (16/16rem);
+			line-height: 1.6em;
+
+			li {
+				color: var(--bodyTextColorWhite);
+			}
+
+			li::marker {
+				color: var(--bodyTextColorWhite);;
+			}
+		}
+
+		.cs-inquiry {
+			padding: clamp(1.75rem, 6vw, 3rem);
+			background-color: #fbf5f1;
+			border-top: (5/16rem) solid var(--primary);
+			border-radius: (4/16rem);
+			box-shadow: 0 (12/16rem) (36/16rem) rgba(0, 0, 0, 0.2);
+		}
+
+		.cs-script {
+			display: block;
+			margin-bottom: (8/16rem);
+			color: var(--darkPurple);
+			font-family: var(--highlightFont);
+			font-size: clamp(1.75rem, 5vw, 2.5rem);
+			line-height: 1.2em;
+		}
+
+		.cs-h3 {
+			margin: 0 0 (12/16rem);
+			font-size: clamp(1.4rem, 4vw, 2rem);
+			line-height: 1.25em;
+		}
+
+		.cs-item-text {
+			font-size: (16/16rem);
+			line-height: 1.6em;
+		}
+
+		.cs-text-link {
+			display: block;
+			width: fit-content;
+			margin-top: (20/16rem);
+			color: var(--darkPurple);
+			font-size: (16/16rem);
+			font-weight: 700;
+		}
+	}
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+	#visit-experience {
+		.cs-card-group {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	#visit-details {
+		.cs-container {
+			grid-template-columns: 1.15fr 0.85fr;
+		}
+	}
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+	#visit-intro {
+		.cs-container {
+			flex-direction: row;
+			justify-content: space-between;
+		}
+
+		.cs-picture {
+			width: 43%;
+			transition: transform 0.3s ease;
+
+			&:hover {
+				transform: scale(1.03);
+			}
+		}
+
+		.cs-content {
+			width: 50%;
+		}
+	}
+}
